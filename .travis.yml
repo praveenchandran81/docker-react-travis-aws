@@ -7,5 +7,6 @@ before_install:
   - docker build -t praveenchandran81/docker-react-travis-aws -f Dockerfile.dev .
 
 script:
-  - docker run praveenchandran81/docker-react-travis-aws npm run test -- --coverage
+  #- docker run praveenchandran81/docker-react-travis-aws npm run test -- --coverage
+  - docker run -e CI=true praveenchandran81/docker-react-travis-aws npm run test
 
